@@ -1,0 +1,739 @@
+<!-- Troubles I am currently experiencing: getting the correct banner picture or one that works with the same layout and colors, the we recommend section, the advertising disclosure due to it being in JavaScript on the page, spacing on the individual merchant sections as well as the hover over color adjustment and link, font weights in general, setting up the page to adjust based on size (I'm aware that there is a way but I have not looked into it yet), creating the ribbons, creating an on hover highlight effect for the widgets, list spacing in the body details section, list style entity coloring and or sizing in the body details section.
+
+This Pen is my replication based on the website https://www.best10merchantservices.com/ I did not pull open the source and reverse engineer it as easy as that may or may not have been. I looked at the webpage and used my knowledge to replicate the webpage and used source to grab colors, pictures and fonts.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Best 10 Merchant Services</title>
+</head>
+  
+<body>
+  <div class="banner">
+    <div id="header">
+      <nav>
+        <div id="nav-picture"><a href="https://www.best10merchantservices.com/"><img  src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/general/27131/top10.png" alt="Top10 Site Image"></a></div>
+        <div id="nav-top-links">
+          <ul class="top-links">        
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">Point of Sale (POS)</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Feature Comparison</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Learn</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="banner-paragraph">
+        <h2>The Best Merchant Services of 2018</h2>
+        <h5>Integrating a Credit Card Processing service in your company can help take your business to the next level.<br />Read our in-depth expert reviews and compare the top Credit Card Processing services available.</h5>
+      </div>
+    </div>
+  </div>
+  <div id="banner-bar">
+    <div id="we-recommend">
+      <h5>
+      We recommend
+    </h5>
+    </div>
+    <div id="advertising-disclosure">
+      <p>
+        Advertising Disclosure
+<!--         <ul class="dropdown">
+          <li>Advertising dislosure details</li> 
+      </ul>-->
+      </p>
+    </div>
+  </div>
+  <div id="body-table">
+      <div id="body-first-column">
+        <div id="body-first-row" class="body-row">
+      <div class="merchant-logo">
+        Lowest rates
+        <br />
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/26977/leaders-merchant-services-logo.png" alt="Leader Merchant Services">
+      </div>
+      <div class="merchant-details">
+        <h4>Leaders 
+          <img id="trophy" src="data:image/png;base64,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"></h4>
+        <p>Specializing in small business solutions... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Rates as low as 0.15%
+          </li>
+          <li>
+            $500 low price guarantee
+          </li>
+          <li>
+            Free EMV equipment
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Outstanding 9.8 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAmCAYAAABH/4KQAAACLklEQVRYhc3YO2gUQRzH8U8ul5wRo8EHJBoVRCvBB0K0EBQMRtDOXlFREUSxERQsAgoKFmInPrARO1+klBhLFUU7rWIhJmITI8RXBIu5I/Fyd956O2F/MMX8Z/a332F2Zmf+Tb29vSJpPh6iB69wHG+SGOQiQJW0G9sxF1sxiKVJDGLCdZfVF+JkEoOYcB8qxPqSGMSEq/R9rUWhXoOYcK0VYnl01WsQE259lXh7vQYx4fZWiX+u1yAW3DphKynXCEbrNYkB14SrVbyfJjGKAXcK26q0DSUxShuuDxdrtA8lMUsTbjPuoaVK+ye8S2KYFlw3BoT/aDUV0JHENN8I0TRdx+J/9OnAazwv1tuwRBjYIjTjI+6gHz/TgNuJXXX2XVkstdrPYgIX0pjW/hQ8yrWFxr+5jSWjlDVC43CHUgCppMc0BteF/emwzNAONP/vgmjHfcxLj+cvHcFwCW4VNgjLGSaFZT9c9tAcYSpPY0UksJKO5XEQ18zc8yZxGLenxY7iSmSokjpzuKTyZpzH+bJYW3SkKb3Mqb2zL5stkgq6HPMk3IhGMZBVuE6cySocHMgyXGuW4e5mFe4JzmUR7iv2YCKLcO2K2YIswlFM9mQR7ouQCZXD9xodv80KzpR+YB/GCXA3a3S+UVYfiwT1Gw+wCY9KwTxOCNe1HlMX4l94JlzTpuuWcDJpwlvhKjcujLiABcIBdHWxrCmW5UICu0VYjWN4jxfFdw+qkH36A+GiTsGivu86AAAAAElFTkSuQmCC">
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9202/5stars.svg">
+          5/5 stars
+        </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE &raquo;
+        </button>
+      </div>
+        </div>
+        <div id="body-second-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/3798/flagship_comparison.png" alt="Flagship">
+      </div>
+      <div class="merchant-details">
+        <h4>Flagship</h4>
+        <p>Competitive rates for a large range of hardware options <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Free Clover and EMV equipment
+          </li>
+          <li>
+            Same Day Funding available
+          </li>
+          <li>
+            No up-front costs
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Outstanding 9.5
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9202/5stars.svg">5/5 stars
+        </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-third-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/1156/creditcard_processing_comparison.png" alt="CreditCardProcessing.com">
+      </div>
+      <div class="merchant-details">
+        <h4>CreditCardProcessing.com</h4>
+        <p>Get free personalized account to suit your business needs... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Free application and set-up
+          </li>
+          <li>
+            Same day approval
+          </li>
+          <li>
+            Rates starting at 0.35%
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Very Good 8.9
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9200/4.5stars.svg">4.5/5 stars
+        </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-fourth-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/1152/paymentdepot_comparison.png" alt="Payment Depot">
+      </div>
+      <div class="merchant-details">
+        <h4>Payment Depot</h4>
+        <p>Subscription-based pricing offers low per-transaction processing fees... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Discount for annual billing
+          </li>
+          <li>
+            Unlimited processing
+          </li>
+          <li>
+            Money-back guarantee
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Good 8.4
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9198/3.5stars.svg">3.5/5 stars
+          </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-fifth-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/12491/cayan_comparisson.png" alt="Cayan">
+      </div>
+      <div class="merchant-details">
+        <h4>Cayan</h4>
+        <p>Serving more than 130,000 businesses... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Intuitive Software for faster processing
+          </li>
+          <li>
+            Cloud-based mobile playforms
+          </li>
+          <li>
+            Competitive pricing structure
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Good 8.1
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9200/4.5stars.svg">4.5/5 stars
+        </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-sixth-row" class="body-row">
+      <div class="merchant-logo">
+        High Risk Specialist
+        <br />
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/27136/logoPayment-Cloud.png" alt="Payment Cloud">
+      </div>
+      <div class="merchant-details">
+        <h4>Payment Cloud</h4>
+        <p>Specialising in high risk accounts... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            98% approval rates
+          </li>
+          <li>
+            All credit scores accepted
+          </li>
+          <li>
+            No minimum time in business required
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Fair 7.8
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9201/4stars.svg">4/5 stars
+          </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-seventh-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/26978/square_comparison.png" alt="Square">
+      </div>
+      <div class="merchant-details">
+        <h4>Square</h4>
+        <p>Fast setup with no commitment... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Ideal for on-the-go businesses
+          </li>
+          <li>
+            Intuitive and easy-to-use
+          </li>
+          <li>
+            Straightforward pricing model
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Fair 7.5
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9198/3.5stars.svg">3.5/5 stars
+          </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+        <div id="body-eighth-row" class="body-row">
+      <div class="merchant-logo">
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/zipped/37400/national-processing-logo-dt.png" alt="National Processing">
+      </div>
+      <div class="merchant-details">
+        <h4>National Processing</h4>
+        <p>Reliable service with no annual fees or setup costs... <a href="">Read Review</a></p>
+        <ul>
+          <li>
+            Accepts all types of payments
+          </li>
+          <li>
+            All-in-one handheld terminals
+          </li>
+          <li>
+            Simple, competitive pricing model
+          </li>
+        </ul>
+      </div>
+      <div class="merchant-rating-quote">
+        <h4>
+          Fair 7.4
+        </h4>
+        <p>
+          <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/general/9201/4stars.svg">4/5 stars
+          </p>
+        <br />
+        <button class='button-quote' type="button">
+          GET QUOTE&raquo;
+        </button>
+      </div>
+    </div>
+      </div>
+      <div id="body-second-column">
+        <div id="widgets">
+          <div class="widgets-image">
+            <a href="https://twitter.com/intent/tweet?url=best10merchantservices.com&original_referer=https%3A%2F%2Ftwitter.com%2Fshare%3Furl%3Dbest10merchantservices.com">
+            <img src="data:image/png;base64,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">
+          </a>
+          </div>
+          <div class="widgets-image">
+            <a href="https://www.facebook.com/sharer.php?u=best10merchantservices.com">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAMAAABgOjJdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACIlBMVEU7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg7WZg6WJg6WJc+XJo2VZUcP4gZPIYbPocmR40/XJo/XZoqS48kRoxziLWkss+sudSsudOHmcAsTZA5WJc8WpkuTpIjRIu7xdv////W3eoeQIk3V5caPIaqt9LK0+QgQoo4V5dIZJ7s7/W1wdkgQolmfa/V2+hFYp04VpdAXZo3VpYaPYcAI3ZJZaB0ibUABGMOM4BBXps8WZg0U5REYJ2Dlr6bq8u2wtlsgrKElr5rgrIyUZMkRotWcKfS2egeQYlUbqbEzuEhQ4slR4xVb6bJ0uM3VZZAXZtmfq9SbaSFmL+pt9JLZqFnf69Ycqg1VJU+W5o4VpYCKXpMZ6KClb0AIHUfQYkpSY4hQ4pieq2RosUYO4aaqsoUOIRddqrn6/KGmb89Wpk5V5cwT5I9W5lsjiXbAAAAUXRSTlMAMnit1Ony7Ni2gT1YxNFqA0XP316CnafGB6rNOWPg+01+0vUFKVR7prTX7fjw3LvZhbA3ZOH+DpbxE6DIy+oJ5CGowhBr+g9/5/OSHwjTqRRXvqqVAAAAAWJLR0RpvGvEtAAAAa5JREFUOMtjYEAARiZmFlY2dg5OLm4GbICHNxAB+PgF0OUFhQJRgbAIqgLRQEwghqxAHCEeFBwcHARhSkjCFUjBpENCw8IjIiIioyBcaQwromNi4+ITEhOSklMgAswQBTIwBalp6RmZIJCVnQMVkgWrkIM7ITcPrCAzv6AQKiQPcooC3JExRRAFxSWxMBWBikAVSnAVpWUg+fKKyqpguJiyCoMqzBvVNbV1IBX1DY0RTc1wJWoM6lBWS2tbXDtIRUdnV3dPEFyFBoMmlNXblwkH/RPg7ghkYdCCsiInIlRMmoxQoc2gDWVNmYpQMa0AoUKZQQfKmj5j5qzZIOk5c+fNX4BwBxuDLpS1cFHB4iUgFUuXLV8REohkhh6Cs3IVSMXqNShpQJdBn4AKAwZDAiqMGIwJqDBhYDDFq8LMnIHBBK8KC1D6sMSnwgqkQg3GmwCO/bXrkBSIQpKhNZQbu34DEGwMQyiwgSVl20DswM4epkLSBiywafMWIAjdClPg4IiUpZywmODsgpItXdnR5N0M0bO2u4cnkryXtw+W4sGXx1qalY2Njd3P3yQAIQwAAoAzplyVzp4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMDUtMTBUMTQ6MDQ6MzcrMDA6MDCu0VFBAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTA1LTEwVDE0OjA0OjM3KzAwOjAw34zp/QAAAABJRU5ErkJggg==">       
+          </a>
+          </div>
+          <div class="widgets-image">
+            <a href="https://plus.google.com/share?url=best10merchantservices.com">
+            <img src="data:image/png;base64,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">
+          </a>
+          </div>
+        </div>
+        <div id="articles">
+          <p id="articles-title">Must Reads</p>
+          <a class="article-link" href="">3 Common Oversights People Make When Choosing a Credit Card Processor</a>
+          <br />
+          <p>
+            Choosing a credit card processor, or a CCP, is a decision that does matter and can make a tremendous difference in your day-to-day life. 
+            <br />
+            <a class="link-read-more" href="">Read More</a>
+          </p>
+          <br />
+          <hr />
+          <br />
+          <a class="article-link" href="">9 Forgotten Tips To Avoid Chargebacks</a>
+          <br />
+          <p>
+            So there you are, sitting at the counter only five minutes after the grand opening of your pet supplies shop, when, woohoo, your first customer! She picks out the right cat food and makes the purchase.
+            <br />
+          <a class="link-read-more" href="">Read More</a>
+          </p>
+          <br />
+          <hr />
+          <br />
+          <a class="article-link" href="">5 Tips for Saving Money with Your POS</a>
+          <br />
+          <p>
+            Saving money is on every small business owner’s shortlist. But it can often be hard to separate quality advice from rubbish. Leveraging your iPad-based POS system however is always a smart bet when looking to cut costs and increase profits.
+          <br>
+            <a class="link-read-more" href="">Read More</a>
+          </p>
+          <br />
+          <hr />
+          <br />
+          <a class="article-link" href="">EMV Chips Driving You Crazy? Here’s Why You Can’t Do Without Them</a>
+          <br />
+          <p>
+            Yes, much like everyone’s favorite Scandi-pop quartet back in the day, EMV technology has come to dominate the industry at lightning speed.
+          <br />
+            <a class="link-read-more" href="">Read More</a>
+          </p>
+          <br />
+          <hr />
+          <br />
+          <a class="article-link" href="">Choosing a Merchant Service Account</a>
+          <br />
+          <p>
+            For business looking to expand their marketing channels to an online ecommerce store, applying for a merchant services account is an important first step. 
+          <br />
+            <a class="link-read-more" href="">Read More</a>
+          <br />
+          <br />
+            <a href="">Read More Articles >></a>
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+  <div id="body-details">
+    <p class="details-title">
+      What is Merchant Services?
+    </p>
+    <p class="details-paragraph">
+      Merchant services is a broad terms that refers to merchant processing services giving a business the capability to accept payment using a customer's credit card. The merchant services provider (MSP) is the one who actually makes the transaction happen while complying with security requirements. Merchant services providers are also referred to as credit card processors (CCP). MSPs act as the intermediary between your business and your customer’s credit or debit card account. <br><br>
+
+This is how it works:
+    </p>
+    <ul class="list">
+      <li>
+        A customer will swipe their credit card or enter their credit card information to make a purchase from your store
+      </li>
+      <li>
+        Your point of sale software sends the data to your chosen MSP
+      </li>
+      <li>
+        The MSP contacts the customer’s credit card association to check that they have enough credit to pay for the purchase
+      </li>
+      <li>
+        The card association checks with the customer’s bank, and then (hopefully) sends the MSP a reply approving the transaction
+      </li>
+      <li>
+        The MSP completes the transaction and sends you a receipt for the customer
+      </li>
+    </ul>
+    <p class="details-title">
+      Merchant Services Fees and Rates
+    </p>
+    <p class="details-paragraph">
+      Understanding the fees and rates for merchant services providers can be difficult. It seems like every MSP uses a different pricing structure and has a different way of calculating your fees, which makes it hard to compare one MSP to another. <br><br>
+
+Here are the main fees and rates to look out for:
+    </p>
+    <p class="details-title-smaller">
+      Interchange fees
+    </p>
+    <p class="details-paragraph">
+      These are the biggest fees you'll pay. They're usually a percentage of each transaction plus a flat fee, e.g., 2.5% + $0.10 per transaction. Unusual transactions like foreign currency transactions incur higher interchange fees.
+    </p>
+    <p class="details-title-smaller">
+      Assessment fees
+    </p>
+    <p class="details-paragraph">
+      These are generally a percentage of your estimated monthly sales volume, e.g., 0.1% of sales up to 1,000 sales, then 0.11% of the next 1,000 sales, etc.
+    </p>
+    <p class="details-title-smaller">
+      Terminal fees
+    </p>
+    <p class="details-paragraph">
+      These are the cost of leasing a physical payment terminal for your store, so it doesn’t apply to online stores. Terminal leasing fees can add up to thousands of dollars, so it’s usually best to buy a terminal outright to avoid this extra charge.
+    </p>
+    <p class="details-title-smaller">
+      A monthly or annual service charge
+    </p>
+    <p class="details-paragraph">
+      Not all MSPs charge this fee, but it’s important to know to look out for it.
+    </p>
+    <p class="details-title-smaller">
+      Payment gateway fees
+    </p>
+    <p class="details-paragraph">
+      These only apply to online retailers. They pay for the cost of your online point of sale (POS) software, which is your virtual payment terminal.
+    </p>
+    <p class="details-title-smaller">
+      Monthly minimum fee
+    </p>
+    <p class="details-paragraph">
+      You’ll have to pay a monthly minimum fee if you don't make a certain minimum amount of transactions each year.
+    </p>
+    <p class="details-title">
+      Is Your Business Considered High Risk?
+    </p>
+    <p class="details-paragraph">
+      One of the main issues that affect how much you’ll pay MSPs is your type of business. Every business is organized into a merchant category and given a merchant category code (MCC). If you have a high-risk MCC, you’ll be charged higher fees than low-risk businesses. High-risk MCCs include those that sell products with a high return rate, need a large amount of capital to get started, or are considered to be in a high turnover industry. <br><br>
+
+Some high-risk MCCs are:
+    </p>
+    <ul class="list">
+      <li>
+        Online gambling or casinos
+      </li>
+      <li>
+        Advance bookings in travel and tourism
+      </li>
+      <li>
+        Magazine or other subscription-based businesses
+      </li>
+      <li>
+        Online dating services
+      </li>
+      <li>
+        Debt collection
+      </li>
+    </ul>
+    <p class="details-paragraph">
+      You could also be considered a high-risk business if:
+    </p>
+    <ul class="list">
+      <li>
+        You have a history of frequent chargebacks
+      </li>
+      <li>
+        You are all first-time business owners
+      </li>
+      <li>
+        You have bad credit history
+      </li>
+      <li>
+        You do a lot of business with international customers in areas that have a high risk of chargebacks (i.e., outside of the EU, North America, Japan, China, Singapore, or Australia)
+      </li>
+      <li>
+        You are a multi-currency business
+      </li>
+    </ul>
+    <p class="details-title">
+      How to Find the Best Credit Card Processors
+    </p>
+    <p class="details-paragraph">
+      There isn’t one credit card processor that is the best for everyone, because every business is different. What’s best for a large retail store with many branches isn’t necessarily best for a small Ecommerce business. However, here are some things to look for to help you find the best credit card processors for your business:
+    </p>
+    <ul class="list">
+      <li>
+        A CCP that has experience serving your sector.
+      </li>
+      <li>
+        A CCP that can service all your needs in one—for example, if you have an online store and a brick and mortar store, look for an MSP that can process both face-to-face and online transactions.
+      </li>
+      <li>
+        Hidden fees. Many companies practice ‘bait and switch’ where the price you see advertised doesn’t include all of the real costs.
+      </li>
+      <li>
+        Compare fees carefully. Because there are a few different pricing models, it can be difficult to compare like with like. An MSP that seems to offer great value at first glance might actually cost more in the long run due to the pricing model.
+      </li>
+      <li>
+        Check the minimum monthly transaction amount and make sure that you expect to meet it.
+      </li>
+      <li>
+        Pay attention to whether the rates go up or down according to your volume of sales. If you make a lot of transactions, you'll want a CCP that lowers the fee as sales increase, but if you make just a few high-value sales per month, you'll want the lowest fees to apply to the lowest sales volume.
+      </li>
+    </ul>
+    <p class="details-title">
+      Credit Card Processing for Small Businesses
+    </p>
+    <p class="details-paragraph">
+      Paying by credit card is the norm these days so adding credit card processing capabilities can be a real boost to your income. Small businesses can choose online credit card processing, a conventional credit card reader, or a mobile credit card processor that integrates with a smartphone or tablet.
+<br><br>
+Conventional card readers can be best if you make a lot of face-to-face sales. If most of your credit card transactions take place online, then an online CCP and payment gateway will be the most useful. Sole traders and mobile businesses, like electricians or entertainers, might find that a mobile CCP that works with their smartphone serves them best.
+    </p>
+    <p class="details-title">
+      What is a Payment Gateway?
+    </p>
+    <p class="details-paragraph">
+      A payment gateway is like a virtual terminal for your online business. It works together with the credit card processor (also called a payment processor, which can make it easy to confuse with payment gateways) to authorize online sales. Payment gateways securely encrypt customer data and send it to the payment processor, which then transmits a request for payment to the customer’s credit card association. When the CCP gets approval for the transaction, it sends it to the payment gateway which then sends it securely back to the merchant.
+    </p>
+  </div>
+  <div class="body-merchant-comparison">
+    <br />
+    <p class="details-title">
+      Top Merchant Services Companies
+    <p/>
+    <br />
+    <div class="merchant-comparison">
+      <div class="merchant-logo-button">
+        <div>
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/26977/leaders-merchant-services-logo.png" alt="Leaders Merchant Services">
+      </div>
+        <div>
+        <button class='button-quote-square' type="button">
+          Get Quote
+        </button>
+        </div>
+      </div>
+      <p class="details-title">
+        Best for
+      </p>
+      <p class="details-paragraph">
+        Small businesses that are looking for a comprehensive payment processing solution at competitive prices. 
+      <br />
+      <br />
+Leaders prides itself on its competitive price per transaction. It has one of the lowest monthly fees and credit and debit card transaction fees, and also offers free hardware to new users. The low monthly minimum of just $15 makes it a good choice for small businesses that don’t yet make a high volume of sales and can’t afford to spend a lot on expensive CCP hardware.
+      </p>
+      <div class="list-pro-con">
+        <div>
+          <p class="details-title">
+            Pros
+            </p>
+            <ul class="list">
+              <li>
+                Free EMV equipment
+              </li>
+              <li>
+                Low transaction fees
+              </li>
+              <li>
+                A $500 guarantee that you’ll save money on credit card processing
+              </li>
+            </ul>
+            <a class="list-link" href="">Read Review</a>
+          </div>
+        <div>
+          <p class="details-title">
+            Cons
+          </p>
+            <ul class="list">
+              <li>
+                Confusing website
+              </li>
+              <li>
+                Live chat support would be helpful
+              </li>
+              <li>
+                Only for US-based businesses
+              </li>
+            </ul>
+          </div>  
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="merchant-comparison">
+      <div class="merchant-logo-button">
+        <div>
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/3798/flagship_comparison.png" alt="Flagship">
+      </div>
+        <div>
+        <button class='button-quote-square' type="button">
+          Get Quote
+        </button>
+        </div>
+      </div>
+      <p class="details-title">
+        Best for
+      </p>
+      <p class="details-paragraph">
+        Small to medium businesses and mobile businesses that need a portable payment processing solution. 
+      <br />
+      <br />
+Flagship stands out for its transparent pricing that has no hidden fees and no setup fees, making it ideal for businesses that are just starting out and have a limited budget. There’s no long-term contract so you can try out Flagship for a month and then switch to a different CCP if it doesn’t suit you. Flagship offers a mobile payment processor, an iPad POS system, and a payment gateway, as well as a conventional merchant processing account.
+      </p>
+      <div class="list-pro-con">
+        <div>
+          <p class="details-title">
+            Pros
+            </p>
+            <ul class="list">
+              <li>
+                No setup fees
+              </li>
+              <li>
+                Monthly contract without cancellation fees
+              </li>
+              <li>
+                Free credit card swiper
+              </li>
+            </ul>
+            <a class="list-link" href="">Read Review</a>
+        </div>
+        <div>
+          <p class="details-title">
+            Cons
+          </p>
+            <ul class="list">
+              <li>
+                No payment information on the website
+              </li>
+              <li>
+                No live chat
+              </li>
+              <li>
+                Fees per transaction could be lower
+              </li>
+            </ul>
+        </div>  
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="merchant-comparison">
+      <div class="merchant-logo-button">
+        <div>
+        <img src="https://d15o9qq6jqrrp9.cloudfront.net/assets/images/sites/88/logos/1156/creditcard_processing_comparison.png" alt="CreditCardProcessing.com">
+      </div>
+        <div>
+        <button class='button-quote-square' type="button">
+          Get Quote
+        </button>
+        </div>
+      </div>
+      <p class="details-title">
+        Best for
+      </p>
+      <p class="details-paragraph">
+        Medium-sized business doing $2,500-$75,000 worth of credit card transactions monthly. 
+      <br />
+      <br />
+CreditCardProcessing.com offers high-quality credit card payment processing options to small and medium-sized businesses. It boasts competitive pricing that can be focused on tiered or interchange-plus pricing structures and offers everything you’ll need to set up or maintain an integrated payment processing system, including iPad POS, mobile payment solutions, website payments, and mail order options.
+      </p>
+      <div class="list-pro-con">
+        <div>
+          <p class="details-title">
+            Pros
+            </p>
+            <a class="list-link" href="">Read Review</a>
+        </div>
+        <div>
+          <p class="details-title">
+            Cons
+          </p>
+        </div>  
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+  </div>
+</body>
+  
+<footer>
+  <br />
+  <br />
+  <p>
+    Copyright © 2009-2018 Natural Intelligence Ltd. All Rights Reserved.
+    <br />
+By using our content, products & services you agree to our <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>.
+    <br />
+Reproduction in whole or in part in any form or medium without express written permission of Natural intelligence Ltd. is strictly prohibited.
+  </p>
+  <br />
+  <div>
+    <ul>
+      <li><a href="#">Feature Comparison</a> |</li> 
+      <li><a href="#">Learn</a> | </li>
+      <li><a href="#">About Us</a> | </li>
+      <li><a href="#">Privacy Policy</a> | </li>
+      <li><a href="#">Terms of Use</a> | </li>
+      <li><a href="#">Sitemap</a> | </li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+    <a href="">Partner with Us</a>
+  </div>
+  <br />
+  <br />
+  <br />
+  </footer>
+  
+</html>
